@@ -6,7 +6,7 @@ const createRoute = () => {
     `<div class="trip-info__main">
        <h1 class="trip-info__title">Amsterdam &mdash; ... &mdash; Amsterdam</h1>
       <p class="trip-info__dates">Mar 18&nbsp;&mdash;&nbsp;21</p></div>`);
-}
+};
 
 const createMenu = () => {
   return (
@@ -14,7 +14,7 @@ const createMenu = () => {
       <a class="trip-tabs__btn  trip-tabs__btn--active" href="#">Table</a>
       <a class="trip-tabs__btn" href="#">Stats</a>
     </nav>`);
-}
+};
 
 const createFilters = () => {
   return (
@@ -36,7 +36,7 @@ const createFilters = () => {
 
       <button class="visually-hidden" type="submit">Accept filter</button>
     </form>`);
-}
+};
 
 const createSort = () => {
   return (
@@ -70,7 +70,7 @@ const createSort = () => {
 
     <span class="trip-sort__item  trip-sort__item--offers">Offers</span>
   </form>`);
-}
+};
 
 const createCard = () => {
   return (
@@ -572,23 +572,21 @@ const createCard = () => {
                  &euro;&nbsp;<span class="event__offer-price">100</span>
                 </li>
             </ul>`);
-}
+};
 
 const render = (container, template, place) => {
   container.insertAdjacentHTML(place, template);
-}
+};
 
 const routeContainer = document.querySelector(`.trip-main__trip-info`);
 const menuContainer = document.querySelector(`.trip-main__trip-controls`);
 const mainContainer = document.querySelector(`.trip-events`);
 
-render(routeContainer, createRoute(), `afterbegin`)
-render(menuContainer, createMenu(), `afterbegin`)
-render(menuContainer, createFilters(), `beforeend`)
-render(mainContainer, createSort(), `afterbegin`)
+render(routeContainer, createRoute(), `afterbegin`);
+render(menuContainer, createMenu(), `afterbegin`);
+render(menuContainer, createFilters(), `beforeend`);
+render(mainContainer, createSort(), `afterbegin`);
 
-{
-  for (let i = INITIAL_ITERATION; i < NUMBER_ITERATIONS; i++) {
-    render(mainContainer, createCard(), `beforeend`);
-  }
+for (let i = INITIAL_ITERATION; i < NUMBER_ITERATIONS; i++) {
+  render(mainContainer, createCard(), `beforeend`);
 }
