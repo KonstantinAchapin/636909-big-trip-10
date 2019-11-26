@@ -1,4 +1,4 @@
-/* eslint-disable strict */
+"use strict";
 
 const NUMBER_OF_CREATED_CARDS = 3;
 
@@ -31,7 +31,7 @@ const createFilters = () =>
     <button class="visually-hidden" type="submit">Accept filter</button>
   </form>`;
 
-const createSort = () =>
+const createSortingCards = () =>
   `<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
     <span class="trip-sort__item  trip-sort__item--day">Day</span>
 
@@ -573,7 +573,7 @@ const mainContainer = document.querySelector(`.trip-events`);
 render(routeContainer, createRoute());
 render(menuContainer, createMenu());
 render(menuContainer, createFilters(), `beforeend`);
-render(mainContainer, createSort());
+render(mainContainer, createSortingCards());
 
 for (let i = 0; i < NUMBER_OF_CREATED_CARDS; i++) {
   render(mainContainer, createCard(), `beforeend`);
