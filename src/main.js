@@ -1,23 +1,24 @@
-const INITIAL_ITERATION = 0;
-const NUMBER_ITERATIONS = 3;
+/* eslint-disable strict */
 
-const createRoute = () => {
-  return (
+const NUMBER_OF_CREATED_CARDS = 3;
+
+const createRoute = () =>
+  (
     `<div class="trip-info__main">
        <h1 class="trip-info__title">Amsterdam &mdash; ... &mdash; Amsterdam</h1>
-      <p class="trip-info__dates">Mar 18&nbsp;&mdash;&nbsp;21</p></div>`);
-};
+      <p class="trip-info__dates">Mar 18&nbsp;&mdash;&nbsp;21</p></div>`
+  );
 
-const createMenu = () => {
-  return (
+const createMenu = () =>
+  (
     `<nav class="trip-controls__trip-tabs  trip-tabs">
       <a class="trip-tabs__btn  trip-tabs__btn--active" href="#">Table</a>
       <a class="trip-tabs__btn" href="#">Stats</a>
-    </nav>`);
-};
+    </nav>`
+  );
 
-const createFilters = () => {
-  return (
+const createFilters = () =>
+  (
     `<form class="trip-filters" action="#" method="get">
       <div class="trip-filters__filter">
         <input id="filter-everything" class="trip-filters__filter-input  visually-hidden" type="radio" name="trip-filter" value="everything" checked>
@@ -35,11 +36,11 @@ const createFilters = () => {
       </div>
 
       <button class="visually-hidden" type="submit">Accept filter</button>
-    </form>`);
-};
+    </form>`
+  );
 
-const createSort = () => {
-  return (
+const createSort = () =>
+  (
     `<form class="trip-events__trip-sort  trip-sort" action="#" method="get">
     <span class="trip-sort__item  trip-sort__item--day">Day</span>
 
@@ -69,11 +70,11 @@ const createSort = () => {
     </div>
 
     <span class="trip-sort__item  trip-sort__item--offers">Offers</span>
-  </form>`);
-};
+  </form>`
+  );
 
-const createCard = () => {
-  return (
+const createCard = () =>
+  (
     `<form class="trip-events__item  event  event--edit" action="#" method="post">
     <header class="event__header">
       <div class="event__type-wrapper">
@@ -571,22 +572,21 @@ const createCard = () => {
                  &plus;
                  &euro;&nbsp;<span class="event__offer-price">100</span>
                 </li>
-            </ul>`);
-};
+            </ul>`
+  );
 
-const render = (container, template, place) => {
+const render = (container, template, place = `afterbegin`) =>
   container.insertAdjacentHTML(place, template);
-};
 
 const routeContainer = document.querySelector(`.trip-main__trip-info`);
 const menuContainer = document.querySelector(`.trip-main__trip-controls`);
 const mainContainer = document.querySelector(`.trip-events`);
 
-render(routeContainer, createRoute(), `afterbegin`);
-render(menuContainer, createMenu(), `afterbegin`);
+render(routeContainer, createRoute());
+render(menuContainer, createMenu());
 render(menuContainer, createFilters(), `beforeend`);
-render(mainContainer, createSort(), `afterbegin`);
+render(mainContainer, createSort());
 
-for (let i = INITIAL_ITERATION; i < NUMBER_ITERATIONS; i++) {
+for (let i = 0; i < NUMBER_OF_CREATED_CARDS; i++) {
   render(mainContainer, createCard(), `beforeend`);
 }
