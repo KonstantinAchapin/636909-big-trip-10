@@ -1,13 +1,11 @@
-"use strict";
-
 const path = require(`path`);
 
 module.exports = {
-  mode: `development`, // Режим сборки
-  entry: `./src/main.js`, // Точка входа
+  mode: `development`,
+  entry: `./src/main.js`,
   output: {
-    filename: `bundle.js`, // Имя файла сборки
-    path: path.join(__dirname, `public`) // Путь сборки
+    filename: `bundle.js`,
+    path: path.join(__dirname, `public`)
   },
   devtool: `source-map`,
   devServer: {
