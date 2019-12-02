@@ -1,7 +1,7 @@
 import {createRoute} from './components/route.js';
 import {createMenu} from './components/menu.js';
 import {createFilters} from './components/filters.js';
-import {createSortingCards} from './components/sortingcards.js';
+import {createSortingCards} from './components/sorting-cards.js';
 import {createCard} from './components/card.js';
 
 const NUMBER_OF_CREATED_CARDS = 3;
